@@ -6,10 +6,10 @@
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-#import "Response.h"
+#import "ORSResponse.h"
 #import "NSHTTPURLResponse+Error.h"
 
-@implementation Response
+@implementation ORSResponse
 
 @synthesize body, headers, statusCode, error;
 

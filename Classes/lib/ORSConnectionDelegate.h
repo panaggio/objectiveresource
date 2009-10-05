@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ConnectionDelegate : NSObject {
+@interface ORSConnectionDelegate : NSObject {
 
 	NSMutableData *data;
 	NSURLResponse *response;

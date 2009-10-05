@@ -1,23 +1,23 @@
 //
-//  Connection.m
+//  ORSConnection.m
 //  
 //
 //  Created by Ryan Daigle on 7/30/08.
 //  Copyright 2008 yFactorial, LLC. All rights reserved.
 //
 
-#import "Connection.h"
-#import "Response.h"
+#import "ORSConnection.h"
+#import "ORSResponse.h"
 #import "NSData+Additions.h"
 #import "NSMutableURLRequest+ResponseType.h"
-#import "ConnectionDelegate.h"
+#import "ORSConnectionDelegate.h"
 
 //#define debugLog(...) NSLog(__VA_ARGS__)
 #ifndef debugLog(...)
 	#define debugLog(...)
 #endif
 
-@implementation Connection
+@implementation ORSConnection
 
 static float timeoutInterval = 5.0;
 
@@ -45,7 +45,7 @@ static NSMutableArray *activeDelegates;
 	}
 }
 
-+ (Response *)sendRequest:(NSMutableURLRequest *)request withUser:(NSString *)user andPassword:(NSString *)password {
++ (ORSResponse *)sendRequest:(NSMutableURLRequest *)request withUser:(NSString *)user andPassword:(NSString *)password {
 	
 	//lots of servers fail to implement http basic authentication correctly, so we pass the credentials even if they are not asked for
 	//TODO make this configurable?
@@ -73,7 +73,7 @@ static NSMutableArray *activeDelegates;
 
 	[self logRequest:request to:[url absoluteString]];
 	
-	ConnectionDelegate *connectionDelegate = [[[ConnectionDelegate alloc] init] autorelease];
+	ORSConnectionDelegate *connectionDelegate = [[[ORSConnectionDelegate alloc] init] autorelease];
 
 	[[self activeDelegates] addObject:connectionDelegate];
 	NSURLConnection *connection = [[[NSURLConnection alloc] initWithRequest:request delegate:connectionDelegate startImmediately:NO] autorelease];
@@ -87,7 +87,7 @@ static NSMutableArray *activeDelegates;
 	while (![connectionDelegate isDone]) {
 		[[NSRunLoop currentRunLoop] runMode:runLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:.3]];
 	}
-	Response *resp = [Response responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
+	ORSResponse *resp = [ORSResponse responseFrom:(NSHTTPURLResponse *)connectionDelegate.response 
 								   withBody:connectionDelegate.data 
 								   andError:connectionDelegate.error];
 	[resp log];
@@ -104,40 +104,40 @@ static NSMutableArray *activeDelegates;
 	return resp;
 }
 
-+ (Response *)post:(NSString *)body to:(NSString *)url {
++ (ORSResponse *)post:(NSString *)body to:(NSString *)url {
 	return [self post:body to:url withUser:@"X" andPassword:@"X"];
 }
 
-+ (Response *)sendBy:(NSString *)method withBody:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
++ (ORSResponse *)sendBy:(NSString *)method withBody:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:method];
 	[request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
-+ (Response *)post:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
++ (ORSResponse *)post:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
 	return [self sendBy:@"POST" withBody:body to:url withUser:user andPassword:password];
 }
 
-+ (Response *)put:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
++ (ORSResponse *)put:(NSString *)body to:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password{
 	return [self sendBy:@"PUT" withBody:body to:url withUser:user andPassword:password];
 }
 
-+ (Response *)get:(NSString *)url {
++ (ORSResponse *)get:(NSString *)url {
 	return [self get:url withUser:@"X" andPassword:@"X"];
 }
 
-+ (Response *)get:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
++ (ORSResponse *)get:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:@"GET"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
-+ (Response *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
++ (ORSResponse *)delete:(NSString *)url withUser:(NSString *)user andPassword:(NSString *)password {
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithUrl:[NSURL URLWithString:url] andMethod:@"DELETE"];
 	return [self sendRequest:request withUser:user andPassword:password];
 }
 
 + (void) cancelAllActiveConnections {
-	for (ConnectionDelegate *delegate in activeDelegates) {
+	for (ORSConnectionDelegate *delegate in activeDelegates) {
 		[delegate performSelectorOnMainThread:@selector(cancel) withObject:nil waitUntilDone:NO];
 	}
 }

@@ -6,10 +6,10 @@
 //  Copyright 2009 Joshua Vickery. All rights reserved.
 //
 
-#import "ConnectionDelegate.h"
+#import "ORSConnectionDelegate.h"
 
 
-@implementation ConnectionDelegate
+@implementation ORSConnectionDelegate
 
 @synthesize response, data, error, connection;
 

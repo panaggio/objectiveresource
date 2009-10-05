@@ -41,8 +41,8 @@
 		239D501A0EA691AC00318802 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		239D501B0EA691AC00318802 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
 		239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		239D50200EA691AC00318802 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
-		239D502A0EA691AC00318802 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		239D50200EA691AC00318802 /* ORSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* ORSConnection.m */; };
+		239D502A0EA691AC00318802 /* ORSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* ORSResponse.m */; };
 		239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
 		239D502C0EA691AC00318802 /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
 		239D504D0EA691D800318802 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350421860E5E1BF200493366 /* CoreGraphics.framework */; };
@@ -56,15 +56,15 @@
 		23B8A4690F55EF7C00F74584 /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350420F30E5E15AA00493366 /* DogViewController.m */; };
 		23B8A46A0F55EF7C00F74584 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421280E5E1A0F00493366 /* Dog.m */; };
 		23B8A46B0F55EF7C00F74584 /* AddDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350421CE0E5E1EC500493366 /* AddDogViewController.m */; };
-		23B8A46C0F55EF7C00F74584 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
-		23B8A46D0F55EF7C00F74584 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		23B8A46C0F55EF7C00F74584 /* ORSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* ORSConnection.m */; };
+		23B8A46D0F55EF7C00F74584 /* ORSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* ORSResponse.m */; };
 		23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829E0B0EA393700070F0BF /* EditDogViewController.m */; };
 		23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23829F000EA39B3B0070F0BF /* ViewDogController.m */; };
 		23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 239D50D90EA6921800318802 /* DogTest.m */; };
 		23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */; };
 		23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4A6410F092B620021AB9D /* DogErrorTest.m */; };
 		23B8A4760F55EF7C00F74584 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */; };
-		23B8A4770F55EF7C00F74584 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
+		23B8A4770F55EF7C00F74584 /* ORSConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ORSConnectionDelegate.m */; };
 		23B8A4780F55EF7C00F74584 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FC0F2E70C2005FF6CE /* NSString+InflectionSupport.m */; };
 		23B8A4790F55EF7C00F74584 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C678FE0F2E70C2005FF6CE /* NSData+Additions.m */; };
 		23B8A47A0F55EF7C00F74584 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679000F2E70C2005FF6CE /* NSObject+PropertySupport.m */; };
@@ -118,8 +118,8 @@
 		35603F43102044E400650D4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35603F40102044E400650D4D /* MapKit.framework */; };
 		356040331020543C00650D4D /* PrefixedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 356040321020543C00650D4D /* PrefixedPerson.m */; };
 		356040341020543C00650D4D /* PrefixedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 356040321020543C00650D4D /* PrefixedPerson.m */; };
-		357A91B60E9A55EF0025D9AF /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* Connection.m */; };
-		357A91C00E9A55EF0025D9AF /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* Response.m */; };
+		357A91B60E9A55EF0025D9AF /* ORSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A919B0E9A55EF0025D9AF /* ORSConnection.m */; };
+		357A91C00E9A55EF0025D9AF /* ORSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A91B00E9A55EF0025D9AF /* ORSResponse.m */; };
 		3584DFD60F31F684008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
 		3584E0A40F32334D008E596B /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */; };
 		3584E0F00F324581008E596B /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */; };
@@ -166,11 +166,16 @@
 		35C679570F2E70C2005FF6CE /* NSNull+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C679290F2E70C2005FF6CE /* NSNull+XMLSerializableSupport.m */; };
 		35C679580F2E70C2005FF6CE /* NSObject+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6792B0F2E70C2005FF6CE /* NSObject+XMLSerializableSupport.m */; };
 		35C679590F2E70C2005FF6CE /* NSString+XMLSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C6792D0F2E70C2005FF6CE /* NSString+XMLSerializableSupport.m */; };
-		35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
-		35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ConnectionDelegate.m */; };
+		35CA32650F1E67A1001513AA /* ORSConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ORSConnectionDelegate.m */; };
+		35CA32660F1E67A1001513AA /* ORSConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CA32640F1E67A1001513AA /* ORSConnectionDelegate.m */; };
 		6624BF650F676B0C006FD4EE /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 6624BF640F676B0C006FD4EE /* NSError+Error.m */; };
 		6624BF660F676B0C006FD4EE /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 6624BF640F676B0C006FD4EE /* NSError+Error.m */; };
-		6679FFB00F5AF22E00412ABF /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679FFAF0F5AF22E00412ABF /* ConnectionManager.m */; };
+		6679FFB00F5AF22E00412ABF /* ORSConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6679FFAF0F5AF22E00412ABF /* ORSConnectionManager.m */; };
+		F47F179610744C48006DC907 /* ORSConnectionAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F179510744C48006DC907 /* ORSConnectionAsync.m */; };
+		F47F179710744C48006DC907 /* ORSConnectionAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F179510744C48006DC907 /* ORSConnectionAsync.m */; };
+		F47F179810744C48006DC907 /* ORSConnectionAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F179510744C48006DC907 /* ORSConnectionAsync.m */; };
+		F47F180D107460F3006DC907 /* PersonAsyncTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F180B107460F3006DC907 /* PersonAsyncTest.m */; };
+		F47F180E107460F3006DC907 /* PersonAsyncTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F180B107460F3006DC907 /* PersonAsyncTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -238,10 +243,10 @@
 		356040311020543C00650D4D /* PrefixedPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixedPerson.h; sourceTree = "<group>"; };
 		356040321020543C00650D4D /* PrefixedPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefixedPerson.m; sourceTree = "<group>"; };
 		357A91970E9A55EF0025D9AF /* ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResource.h; path = lib/ObjectiveResource.h; sourceTree = "<group>"; };
-		357A919A0E9A55EF0025D9AF /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = lib/Connection.h; sourceTree = "<group>"; };
-		357A919B0E9A55EF0025D9AF /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = lib/Connection.m; sourceTree = "<group>"; };
-		357A91AF0E9A55EF0025D9AF /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Response.h; path = lib/Response.h; sourceTree = "<group>"; };
-		357A91B00E9A55EF0025D9AF /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Response.m; path = lib/Response.m; sourceTree = "<group>"; };
+		357A919A0E9A55EF0025D9AF /* ORSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSConnection.h; path = lib/ORSConnection.h; sourceTree = "<group>"; };
+		357A919B0E9A55EF0025D9AF /* ORSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSConnection.m; path = lib/ORSConnection.m; sourceTree = "<group>"; };
+		357A91AF0E9A55EF0025D9AF /* ORSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSResponse.h; path = lib/ORSResponse.h; sourceTree = "<group>"; };
+		357A91B00E9A55EF0025D9AF /* ORSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSResponse.m; path = lib/ORSResponse.m; sourceTree = "<group>"; };
 		3584DFD40F31F684008E596B /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+ObjectiveResource.h"; path = "lib/NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
 		3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ObjectiveResource.m"; path = "lib/NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
 		3584E0EE0F324581008E596B /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveResourceConfig.h; path = lib/ObjectiveResourceConfig.h; sourceTree = "<group>"; };
@@ -296,13 +301,18 @@
 		35C6792D0F2E70C2005FF6CE /* NSString+XMLSerializableSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLSerializableSupport.m"; sourceTree = "<group>"; };
 		35C6792E0F2E70C2005FF6CE /* XMLSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializable.h; sourceTree = "<group>"; };
 		35C6792F0F2E70C2005FF6CE /* XMLSerializableSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializableSupport.h; sourceTree = "<group>"; };
-		35CA32630F1E67A1001513AA /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionDelegate.h; path = lib/ConnectionDelegate.h; sourceTree = "<group>"; };
-		35CA32640F1E67A1001513AA /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionDelegate.m; path = lib/ConnectionDelegate.m; sourceTree = "<group>"; };
+		35CA32630F1E67A1001513AA /* ORSConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSConnectionDelegate.h; path = lib/ORSConnectionDelegate.h; sourceTree = "<group>"; };
+		35CA32640F1E67A1001513AA /* ORSConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSConnectionDelegate.m; path = lib/ORSConnectionDelegate.m; sourceTree = "<group>"; };
 		6624BF630F676B0C006FD4EE /* NSError+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Error.h"; sourceTree = "<group>"; };
 		6624BF640F676B0C006FD4EE /* NSError+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Error.m"; sourceTree = "<group>"; };
-		6679FFAE0F5AF22E00412ABF /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionManager.h; path = lib/ConnectionManager.h; sourceTree = "<group>"; };
-		6679FFAF0F5AF22E00412ABF /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionManager.m; path = lib/ConnectionManager.m; sourceTree = "<group>"; };
+		6679FFAE0F5AF22E00412ABF /* ORSConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSConnectionManager.h; path = lib/ORSConnectionManager.h; sourceTree = "<group>"; };
+		6679FFAF0F5AF22E00412ABF /* ORSConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSConnectionManager.m; path = lib/ORSConnectionManager.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47F173F10741652006DC907 /* start_test_server.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start_test_server.sh; sourceTree = "<group>"; };
+		F47F179410744C48006DC907 /* ORSConnectionAsync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSConnectionAsync.h; path = lib/ORSConnectionAsync.h; sourceTree = "<group>"; };
+		F47F179510744C48006DC907 /* ORSConnectionAsync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSConnectionAsync.m; path = lib/ORSConnectionAsync.m; sourceTree = "<group>"; };
+		F47F180B107460F3006DC907 /* PersonAsyncTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonAsyncTest.m; sourceTree = "<group>"; };
+		F47F180C107460F3006DC907 /* PersonAsyncTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonAsyncTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,12 +376,12 @@
 		239D4FE30EA68FAC00318802 /* GoogleTestUnit */ = {
 			isa = PBXGroup;
 			children = (
+				354A12221020372800063B90 /* GTMDefines.h */,
 				354A12281020375E00063B90 /* GTMIPhoneUnitTestDelegate.h */,
 				354A12291020375E00063B90 /* GTMIPhoneUnitTestDelegate.m */,
 				354A122A1020375E00063B90 /* GTMIPhoneUnitTestMain.m */,
 				354A12231020374100063B90 /* GTMSenTestCase.h */,
 				354A12241020374100063B90 /* GTMSenTestCase.m */,
-				354A12221020372800063B90 /* GTMDefines.h */,
 			);
 			name = GoogleTestUnit;
 			sourceTree = "<group>";
@@ -379,13 +389,15 @@
 		239D50D60EA691EC00318802 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				239D50D80EA6921800318802 /* DogTest.h */,
-				239D50D90EA6921800318802 /* DogTest.m */,
 				23B4A6400F092B620021AB9D /* DogErrorTest.h */,
 				23B4A6410F092B620021AB9D /* DogErrorTest.m */,
+				239D50D80EA6921800318802 /* DogTest.h */,
+				239D50D90EA6921800318802 /* DogTest.m */,
+				2322CD890F2F9F3D00EDF562 /* ItemIds.h */,
+				F47F180C107460F3006DC907 /* PersonAsyncTest.h */,
+				F47F180B107460F3006DC907 /* PersonAsyncTest.m */,
 				2322CD630F2F968000EDF562 /* PersonTest.h */,
 				2322CD640F2F968000EDF562 /* PersonTest.m */,
-				2322CD890F2F9F3D00EDF562 /* ItemIds.h */,
 				356040311020543C00650D4D /* PrefixedPerson.h */,
 				356040321020543C00650D4D /* PrefixedPerson.m */,
 			);
@@ -396,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
+				F47F173E10741652006DC907 /* test */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -444,29 +457,29 @@
 		350420F10E5E153C00493366 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				239D50D60EA691EC00318802 /* UnitTests */,
-				2314FF740F2F8094003B13AB /* ViewPersonController.h */,
-				2314FF750F2F8094003B13AB /* ViewPersonController.m */,
+				350421CD0E5E1EC500493366 /* AddDogViewController.h */,
+				350421CE0E5E1EC500493366 /* AddDogViewController.m */,
+				2314FF5B0F2F804C003B13AB /* AddPersonViewController.h */,
+				2314FF5C0F2F804C003B13AB /* AddPersonViewController.m */,
+				350421270E5E1A0F00493366 /* Dog.h */,
+				350421280E5E1A0F00493366 /* Dog.m */,
+				350420F20E5E15AA00493366 /* DogViewController.h */,
+				350420F30E5E15AA00493366 /* DogViewController.m */,
+				23829E0A0EA393700070F0BF /* EditDogViewController.h */,
+				23829E0B0EA393700070F0BF /* EditDogViewController.m */,
+				2314FF660F2F806D003B13AB /* EditPersonController.h */,
+				2314FF670F2F806D003B13AB /* EditPersonController.m */,
+				1D3623240D0F684500981E51 /* objective_resourceAppDelegate.h */,
+				1D3623250D0F684500981E51 /* objective_resourceAppDelegate.m */,
 				2314FF6C0F2F8089003B13AB /* PeopleViewController.h */,
 				2314FF6D0F2F8089003B13AB /* PeopleViewController.m */,
 				2314FF6E0F2F8089003B13AB /* Person.h */,
 				2314FF6F0F2F8089003B13AB /* Person.m */,
-				2314FF660F2F806D003B13AB /* EditPersonController.h */,
-				2314FF670F2F806D003B13AB /* EditPersonController.m */,
-				2314FF5B0F2F804C003B13AB /* AddPersonViewController.h */,
-				2314FF5C0F2F804C003B13AB /* AddPersonViewController.m */,
-				350420F20E5E15AA00493366 /* DogViewController.h */,
-				350420F30E5E15AA00493366 /* DogViewController.m */,
-				350421270E5E1A0F00493366 /* Dog.h */,
-				350421280E5E1A0F00493366 /* Dog.m */,
-				350421CD0E5E1EC500493366 /* AddDogViewController.h */,
-				350421CE0E5E1EC500493366 /* AddDogViewController.m */,
-				23829E0A0EA393700070F0BF /* EditDogViewController.h */,
-				23829E0B0EA393700070F0BF /* EditDogViewController.m */,
+				239D50D60EA691EC00318802 /* UnitTests */,
 				23829EFF0EA39B3B0070F0BF /* ViewDogController.h */,
 				23829F000EA39B3B0070F0BF /* ViewDogController.m */,
-				1D3623240D0F684500981E51 /* objective_resourceAppDelegate.h */,
-				1D3623250D0F684500981E51 /* objective_resourceAppDelegate.m */,
+				2314FF740F2F8094003B13AB /* ViewPersonController.h */,
+				2314FF750F2F8094003B13AB /* ViewPersonController.m */,
 			);
 			name = Example;
 			sourceTree = "<group>";
@@ -474,9 +487,9 @@
 		357A915B0E9A436E0025D9AF /* ObjectiveResource */ = {
 			isa = PBXGroup;
 			children = (
+				357A91630E9A436E0025D9AF /* Connection */,
 				3584DFD40F31F684008E596B /* NSObject+ObjectiveResource.h */,
 				3584DFD50F31F684008E596B /* NSObject+ObjectiveResource.m */,
-				357A91630E9A436E0025D9AF /* Connection */,
 				357A91970E9A55EF0025D9AF /* ObjectiveResource.h */,
 				3584E0EE0F324581008E596B /* ObjectiveResourceConfig.h */,
 				3584E0EF0F324581008E596B /* ObjectiveResourceConfig.m */,
@@ -487,20 +500,22 @@
 		357A91630E9A436E0025D9AF /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				6679FFAE0F5AF22E00412ABF /* ConnectionManager.h */,
-				6679FFAF0F5AF22E00412ABF /* ConnectionManager.m */,
-				35CA32630F1E67A1001513AA /* ConnectionDelegate.h */,
-				35CA32640F1E67A1001513AA /* ConnectionDelegate.m */,
-				2377C4F30F019E67006E155F /* NSHTTPURLResponse+Error.h */,
-				2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */,
-				357A919A0E9A55EF0025D9AF /* Connection.h */,
-				357A919B0E9A55EF0025D9AF /* Connection.m */,
-				357A91AF0E9A55EF0025D9AF /* Response.h */,
-				357A91B00E9A55EF0025D9AF /* Response.m */,
-				23C922F10F25066900EDE8AF /* NSMutableURLRequest+ResponseType.h */,
-				23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */,
 				6624BF630F676B0C006FD4EE /* NSError+Error.h */,
 				6624BF640F676B0C006FD4EE /* NSError+Error.m */,
+				2377C4F30F019E67006E155F /* NSHTTPURLResponse+Error.h */,
+				2377C4F40F019E67006E155F /* NSHTTPURLResponse+Error.m */,
+				23C922F10F25066900EDE8AF /* NSMutableURLRequest+ResponseType.h */,
+				23C922F20F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m */,
+				357A919A0E9A55EF0025D9AF /* ORSConnection.h */,
+				357A919B0E9A55EF0025D9AF /* ORSConnection.m */,
+				F47F179410744C48006DC907 /* ORSConnectionAsync.h */,
+				F47F179510744C48006DC907 /* ORSConnectionAsync.m */,
+				35CA32630F1E67A1001513AA /* ORSConnectionDelegate.h */,
+				35CA32640F1E67A1001513AA /* ORSConnectionDelegate.m */,
+				6679FFAE0F5AF22E00412ABF /* ORSConnectionManager.h */,
+				6679FFAF0F5AF22E00412ABF /* ORSConnectionManager.m */,
+				357A91AF0E9A55EF0025D9AF /* ORSResponse.h */,
+				357A91B00E9A55EF0025D9AF /* ORSResponse.m */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -578,10 +593,10 @@
 		35C6790F0F2E70C2005FF6CE /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				23510DE60F4CB31B00B0796F /* NSArray+JSONSerializableSupport.h */,
-				23510DE70F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m */,
 				35C679100F2E70C2005FF6CE /* JSONSerializable.h */,
 				35C679110F2E70C2005FF6CE /* JSONSerializableSupport.h */,
+				23510DE60F4CB31B00B0796F /* NSArray+JSONSerializableSupport.h */,
+				23510DE70F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m */,
 				35C679120F2E70C2005FF6CE /* NSDictionary+JSONSerializableSupport.h */,
 				35C679130F2E70C2005FF6CE /* NSDictionary+JSONSerializableSupport.m */,
 				35C679140F2E70C2005FF6CE /* NSObject+JSONSerializableSupport.h */,
@@ -593,8 +608,6 @@
 		35C6791F0F2E70C2005FF6CE /* XML */ = {
 			isa = PBXGroup;
 			children = (
-				23510DEA0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.h */,
-				23510DEB0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m */,
 				35C679200F2E70C2005FF6CE /* FromXMLElementDelegate.h */,
 				35C679210F2E70C2005FF6CE /* FromXMLElementDelegate.m */,
 				35C679220F2E70C2005FF6CE /* NSArray+XMLSerializableSupport.h */,
@@ -605,6 +618,8 @@
 				35C679270F2E70C2005FF6CE /* NSDictionary+XMLSerializableSupport.m */,
 				35C679280F2E70C2005FF6CE /* NSNull+XMLSerializableSupport.h */,
 				35C679290F2E70C2005FF6CE /* NSNull+XMLSerializableSupport.m */,
+				23510DEA0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.h */,
+				23510DEB0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m */,
 				35C6792A0F2E70C2005FF6CE /* NSObject+XMLSerializableSupport.h */,
 				35C6792B0F2E70C2005FF6CE /* NSObject+XMLSerializableSupport.m */,
 				35C6792C0F2E70C2005FF6CE /* NSString+XMLSerializableSupport.h */,
@@ -613,6 +628,14 @@
 				35C6792F0F2E70C2005FF6CE /* XMLSerializableSupport.h */,
 			);
 			path = XML;
+			sourceTree = "<group>";
+		};
+		F47F173E10741652006DC907 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				F47F173F10741652006DC907 /* start_test_server.sh */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -739,7 +762,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd sample_rails_app\nkill `cat tmp/pids/mongrel.pid`\nrake db:migrate\nrake db:test:prepare\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
+			shellScript = "script_file=\"${PROJECT_DIR}/test/start_test_server.sh\"\n\necho \"Running a custom build phase script: $script_file\"\n${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\\n\\n\"\nexit \"${scriptExitStatus}\"\n";
 		};
 		35C679680F2E7803005FF6CE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -752,7 +775,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd sample_rails_app\nkill `cat tmp/pids/mongrel.pid`\nrake db:migrate\nrake db:test:prepare\nrake db:populate RAILS_ENV=test\n./script/server -e test -p 36313 -d";
+			shellScript = "script_file=\"${PROJECT_DIR}/test/start_test_server.sh\"\n\necho \"Running a custom build phase script: $script_file\"\n${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\\n\\n\"\nexit \"${scriptExitStatus}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -766,14 +790,14 @@
 				350420F40E5E15AA00493366 /* DogViewController.m in Sources */,
 				350421290E5E1A0F00493366 /* Dog.m in Sources */,
 				350421CF0E5E1EC500493366 /* AddDogViewController.m in Sources */,
-				357A91B60E9A55EF0025D9AF /* Connection.m in Sources */,
-				357A91C00E9A55EF0025D9AF /* Response.m in Sources */,
+				357A91B60E9A55EF0025D9AF /* ORSConnection.m in Sources */,
+				357A91C00E9A55EF0025D9AF /* ORSResponse.m in Sources */,
 				23829E0C0EA393700070F0BF /* EditDogViewController.m in Sources */,
 				3584E0A40F32334D008E596B /* NSObject+ObjectiveResource.m in Sources */,
 				23829F010EA39B3B0070F0BF /* ViewDogController.m in Sources */,
 				2377C4F50F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
 				23C922F40F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */,
-				35CA32650F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
+				35CA32650F1E67A1001513AA /* ORSConnectionDelegate.m in Sources */,
 				35C679300F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */,
 				35C679310F2E70C2005FF6CE /* NSData+Additions.m in Sources */,
 				35C679320F2E70C2005FF6CE /* NSObject+PropertySupport.m in Sources */,
@@ -803,6 +827,7 @@
 				3584E0F10F324581008E596B /* ObjectiveResourceConfig.m in Sources */,
 				23510DE90F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m in Sources */,
 				23510DED0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m in Sources */,
+				F47F179810744C48006DC907 /* ORSConnectionAsync.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,15 +838,15 @@
 				239D501A0EA691AC00318802 /* DogViewController.m in Sources */,
 				239D501B0EA691AC00318802 /* Dog.m in Sources */,
 				239D501C0EA691AC00318802 /* AddDogViewController.m in Sources */,
-				239D50200EA691AC00318802 /* Connection.m in Sources */,
-				239D502A0EA691AC00318802 /* Response.m in Sources */,
+				239D50200EA691AC00318802 /* ORSConnection.m in Sources */,
+				239D502A0EA691AC00318802 /* ORSResponse.m in Sources */,
 				239D502B0EA691AC00318802 /* EditDogViewController.m in Sources */,
 				239D502C0EA691AC00318802 /* ViewDogController.m in Sources */,
 				239D50DA0EA6921800318802 /* DogTest.m in Sources */,
 				2377C4F60F019E67006E155F /* NSHTTPURLResponse+Error.m in Sources */,
 				23B4A6420F092B620021AB9D /* DogErrorTest.m in Sources */,
 				23C922F30F25066900EDE8AF /* NSMutableURLRequest+ResponseType.m in Sources */,
-				35CA32660F1E67A1001513AA /* ConnectionDelegate.m in Sources */,
+				35CA32660F1E67A1001513AA /* ORSConnectionDelegate.m in Sources */,
 				35C679450F2E70C2005FF6CE /* NSString+InflectionSupport.m in Sources */,
 				35C679460F2E70C2005FF6CE /* NSData+Additions.m in Sources */,
 				35C679470F2E70C2005FF6CE /* NSObject+PropertySupport.m in Sources */,
@@ -853,12 +878,14 @@
 				3584E0F00F324581008E596B /* ObjectiveResourceConfig.m in Sources */,
 				23510DE80F4CB31B00B0796F /* NSArray+JSONSerializableSupport.m in Sources */,
 				23510DEC0F4CB32900B0796F /* NSNumber+XMLSerializableSupport.m in Sources */,
-				6679FFB00F5AF22E00412ABF /* ConnectionManager.m in Sources */,
+				6679FFB00F5AF22E00412ABF /* ORSConnectionManager.m in Sources */,
 				6624BF650F676B0C006FD4EE /* NSError+Error.m in Sources */,
 				354A12251020374100063B90 /* GTMSenTestCase.m in Sources */,
 				354A122B1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				354A122C1020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
 				356040331020543C00650D4D /* PrefixedPerson.m in Sources */,
+				F47F179710744C48006DC907 /* ORSConnectionAsync.m in Sources */,
+				F47F180E107460F3006DC907 /* PersonAsyncTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,15 +896,15 @@
 				23B8A4690F55EF7C00F74584 /* DogViewController.m in Sources */,
 				23B8A46A0F55EF7C00F74584 /* Dog.m in Sources */,
 				23B8A46B0F55EF7C00F74584 /* AddDogViewController.m in Sources */,
-				23B8A46C0F55EF7C00F74584 /* Connection.m in Sources */,
-				23B8A46D0F55EF7C00F74584 /* Response.m in Sources */,
+				23B8A46C0F55EF7C00F74584 /* ORSConnection.m in Sources */,
+				23B8A46D0F55EF7C00F74584 /* ORSResponse.m in Sources */,
 				23B8A46E0F55EF7C00F74584 /* EditDogViewController.m in Sources */,
 				23B8A46F0F55EF7C00F74584 /* ViewDogController.m in Sources */,
 				23B8A4730F55EF7C00F74584 /* DogTest.m in Sources */,
 				23B8A4740F55EF7C00F74584 /* NSHTTPURLResponse+Error.m in Sources */,
 				23B8A4750F55EF7C00F74584 /* DogErrorTest.m in Sources */,
 				23B8A4760F55EF7C00F74584 /* NSMutableURLRequest+ResponseType.m in Sources */,
-				23B8A4770F55EF7C00F74584 /* ConnectionDelegate.m in Sources */,
+				23B8A4770F55EF7C00F74584 /* ORSConnectionDelegate.m in Sources */,
 				23B8A4780F55EF7C00F74584 /* NSString+InflectionSupport.m in Sources */,
 				23B8A4790F55EF7C00F74584 /* NSData+Additions.m in Sources */,
 				23B8A47A0F55EF7C00F74584 /* NSObject+PropertySupport.m in Sources */,
@@ -914,6 +941,8 @@
 				354A122F1020375E00063B90 /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				354A12301020375E00063B90 /* GTMIPhoneUnitTestMain.m in Sources */,
 				356040341020543C00650D4D /* PrefixedPerson.m in Sources */,
+				F47F179610744C48006DC907 /* ORSConnectionAsync.m in Sources */,
+				F47F180D107460F3006DC907 /* PersonAsyncTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,7 +996,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Unit Tests";
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -991,7 +1020,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Unit Tests";
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos3.0;
 				ZERO_LINK = NO;
 			};
 			name = Release;

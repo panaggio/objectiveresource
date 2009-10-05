@@ -14,7 +14,7 @@
 #endif
 #endif
 
-@interface Response : NSObject {
+@interface ORSResponse : NSObject {
 	NSData *body;
 	NSDictionary *headers;
 	NSInteger statusCode;

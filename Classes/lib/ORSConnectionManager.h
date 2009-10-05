@@ -8,11 +8,11 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ConnectionManager : NSObject {
+@interface ORSConnectionManager : NSObject {
 	NSOperationQueue *operationQueue;
 }
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
-+ (ConnectionManager *)sharedInstance;
++ (ORSConnectionManager *)sharedInstance;
 - (void)cancelAllJobs;
 - (void)runJob:(SEL)selector onTarget:(id)target;
 - (void)runJob:(SEL)selector onTarget:(id)target withArgument:(id)argument;

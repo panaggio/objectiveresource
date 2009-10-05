@@ -5,10 +5,10 @@
 //  Copyright 2009 yFactorial, LLC. All rights reserved.
 //
 
-#import "ConnectionManager.h"
+#import "ORSConnectionManager.h"
 
 
-@implementation ConnectionManager
+@implementation ORSConnectionManager
 @synthesize operationQueue;
 
 - (void)cancelAllJobs {
@@ -37,9 +37,9 @@
 
 #pragma mark Standard Singleton Plumbing
 
-static ConnectionManager *sharedConnectionManager = nil;
+static ORSConnectionManager *sharedConnectionManager = nil;
 
-+ (ConnectionManager *)sharedInstance
++ (ORSConnectionManager *)sharedInstance
 {
     @synchronized(self) {
         if (sharedConnectionManager == nil) {

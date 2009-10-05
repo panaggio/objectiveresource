@@ -7,8 +7,8 @@
 //
 
 #import "NSObject+ObjectiveResource.h"
-#import "Connection.h"
-#import "Response.h"
+#import "ORSConnection.h"
+#import "ORSResponse.h"
 #import "CoreSupport.h"
 #import "XMLSerializableSupport.h"
 #import "JSONSerializableSupport.h"
@@ -120,7 +120,7 @@ static NSString *_activeResourcePrefix = nil;
 
 // Find all items 
 + (NSArray *)findAllRemoteWithResponse:(NSError **)aError {
-	Response *res = [Connection get:[self getRemoteCollectionPath] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	ORSResponse *res = [ORSConnection get:[self getRemoteCollectionPath] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 		return nil;
@@ -136,7 +136,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 + (id)findRemote:(NSString *)elementId withResponse:(NSError **)aError {
-	Response *res = [Connection get:[self getRemoteElementPath:elementId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	ORSResponse *res = [ORSConnection get:[self getRemoteElementPath:elementId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
@@ -235,7 +235,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 - (BOOL)createRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {
-	Response *res = [Connection post:[self convertToRemoteExpectedType] to:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	ORSResponse *res = [ORSConnection post:[self convertToRemoteExpectedType] to:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
@@ -248,9 +248,12 @@ static NSString *_activeResourcePrefix = nil;
 		return NO;
 	}
 }
+- (BOOL)createRemoteAsyncAtPath:(NSString *)path withResponse:(NSError **)aError; {
+  
+}
 
 -(BOOL)updateRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {	
-	Response *res = [Connection put:[self convertToRemoteExpectedType] to:path 
+	ORSResponse *res = [ORSConnection put:[self convertToRemoteExpectedType] to:path 
 						   withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
@@ -269,7 +272,7 @@ static NSString *_activeResourcePrefix = nil;
 }
 
 - (BOOL)destroyRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {
-	Response *res = [Connection delete:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	ORSResponse *res = [ORSConnection delete:path withUser:[[self class]  getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 	}
