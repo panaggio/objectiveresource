@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ORSResponse.h"
 
 @interface NSObject (ObjectiveResource)
 
@@ -39,6 +40,7 @@ typedef enum {
 
 // Finders
 + (NSArray *)findAllRemote;
++ (void)findAllRemoteAsync;
 + (NSArray *)findAllRemoteWithResponse:(NSError **)aError;
 + (id)findRemote:(NSString *)elementId;
 + (id)findRemote:(NSString *)elementId withResponse:(NSError **)aError; 
@@ -56,6 +58,7 @@ typedef enum {
 - (void)setRemoteId:(id)orsId;
 - (NSString *)getRemoteClassIdName;
 - (BOOL)createRemote;
+- (void)createRemoteAsync;
 - (BOOL)createRemoteWithResponse:(NSError **)aError;
 - (BOOL)createRemoteWithParameters:(NSDictionary *)parameters;
 - (BOOL)createRemoteWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError;
@@ -65,7 +68,7 @@ typedef enum {
 - (BOOL)updateRemoteWithResponse:(NSError **)aError;
 - (BOOL)saveRemote;
 - (BOOL)saveRemoteWithResponse:(NSError **)aError;
-
+- (void)updateFromResponse:(ORSResponse*)response;
 
 - (BOOL)createRemoteAtPath:(NSString *)path withResponse:(NSError **)aError;
 - (BOOL)updateRemoteAtPath:(NSString *)path withResponse:(NSError **)aError;

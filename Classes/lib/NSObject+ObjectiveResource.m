@@ -7,7 +7,9 @@
 //
 
 #import "NSObject+ObjectiveResource.h"
+#import "ObjectiveResource.h"
 #import "ORSConnection.h"
+#import "ORSConnectionAsync.h"
 #import "ORSResponse.h"
 #import "CoreSupport.h"
 #import "XMLSerializableSupport.h"
@@ -21,6 +23,11 @@ static SEL _activeResourceSerializeMethod = nil;
 static NSString *_activeResourceProtocolExtension = @".xml";
 static ORSResponseFormat _format;
 static NSString *_activeResourcePrefix = nil;
+
+
+@interface NSObject (ObjectiveResourcePrivate)
++ (NSDictionary *)propertiesFromData:(NSData *)data;
+@end
 
 
 @implementation NSObject (ObjectiveResource)
@@ -133,6 +140,12 @@ static NSString *_activeResourcePrefix = nil;
 + (NSArray *)findAllRemote {
 	NSError *aError;
 	return [self findAllRemoteWithResponse:&aError];
+}
+
++ (void)findAllRemoteAsync; {
+  id delegate = [ObjectiveResourceConfig getDelegate];
+  ORSConnectionAsync * asyncConnection = [[ORSConnectionAsync alloc] initWithDelegate:delegate]; // [Person findAllRemote]
+  [asyncConnection get:[[self class] getRemoteCollectionPath]];
 }
 
 + (id)findRemote:(NSString *)elementId withResponse:(NSError **)aError {
@@ -248,9 +261,6 @@ static NSString *_activeResourcePrefix = nil;
 		return NO;
 	}
 }
-- (BOOL)createRemoteAsyncAtPath:(NSString *)path withResponse:(NSError **)aError; {
-  
-}
 
 -(BOOL)updateRemoteAtPath:(NSString *)path withResponse:(NSError **)aError {	
 	ORSResponse *res = [ORSConnection put:[self convertToRemoteExpectedType] to:path 
@@ -286,6 +296,12 @@ static NSString *_activeResourcePrefix = nil;
 - (BOOL)createRemote {
 	NSError *error;
 	return [self createRemoteWithResponse:&error];
+}
+
+- (void)createRemoteAsync; {
+  id delegate = [ObjectiveResourceConfig getDelegate];
+  ORSConnectionAsync * asyncConnection = [[ORSConnectionAsync alloc] initWithDelegate:delegate];
+  [asyncConnection post:[self convertToRemoteExpectedType] to:[self getRemoteCollectionPath]];
 }
 
 - (BOOL)createRemoteWithParameters:(NSDictionary *)parameters andResponse:(NSError **)aError {
@@ -345,6 +361,12 @@ static NSString *_activeResourcePrefix = nil;
 	return [self saveRemoteWithResponse:&error];
 }
 
+- (void)updateFromResponse:(ORSResponse*)response; {
+  NSDictionary * newProperties = [[self class] propertiesFromData:response.body];
+  [self setProperties:newProperties];
+}
+
+
 /*
  Override this in your model class to extend or replace the excluded properties
  eg.
@@ -359,6 +381,13 @@ static NSString *_activeResourcePrefix = nil;
 {
   // exclude id , created_at , updated_at
   return [NSArray arrayWithObjects:[self getRemoteClassIdName],@"createdAt",@"updatedAt",nil]; 
+}
+
++ (NSDictionary *)propertiesFromData:(NSData *)data; {
+  if( _activeResourceParseDataMethod ) {
+    return [[[self class] performSelector:_activeResourceParseDataMethod withObject:data] properties];
+  }
+  return [[self class] fromXMLData:data];
 }
 
 
