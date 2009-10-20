@@ -18,6 +18,9 @@
 @property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) NSString * password;
 
+- (id)initWithUser:(NSString*)user password:(NSString*)password delegate:(id<ORSConnectionAsyncDelegate>)delegate;
+- (id)initWithDelegate:(id<ORSConnectionAsyncDelegate>)delegate;
+  
 - (void)get:(NSString *)url;
 - (void)put:(NSString *)body to:(NSString *)url;
 - (void)post:(NSString *)body to:(NSString *)url;
@@ -27,8 +30,8 @@
 @end
 
 @protocol ORSConnectionAsyncDelegate
-- (void)oRSconnection:(ORSConnectionAsync*)connection didGetResponse:(ORSResponse*)response;
-- (void)oRSconnection:(ORSConnectionAsync*)connection didFailWithError:(NSError *)error;
+- (void)orsConnection:(ORSConnectionAsync*)connection didGetResponse:(ORSResponse*)response;
+- (void)orsConnection:(ORSConnectionAsync*)connection didFailWithError:(NSError *)error;
 @end
 
 

@@ -71,7 +71,7 @@
   NSURLConnection * connection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
   if( !connection ) {
     NSError * error = [NSError errorWithDomain:@"" code:0 userInfo:@"NSURLConnection returned a nil object."];
-    [_delegate oRSconnection:self didFailWithError:error];
+    [_delegate orsConnection:self didFailWithError:error];
   }
 }
 
@@ -89,13 +89,13 @@
 }
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error; {
   [connection release];
-  [_delegate oRSconnection:self didFailWithError:error];
+  [_delegate orsConnection:self didFailWithError:error];
 }
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection; {
   ORSResponse * response = [ORSResponse responseFrom:(NSHTTPURLResponse *)_response withBody:_data andError:nil];
   [response log];
   [_data release]; // could be invalid ...
-  [_delegate oRSconnection:self didGetResponse:response];
+  [_delegate orsConnection:self didGetResponse:response];
 }
 
 
