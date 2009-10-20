@@ -26,5 +26,7 @@
 + (ORSResponseFormat)getResponseType;
 + (NSString *)getLocalClassesPrefix;
 + (void)setLocalClassesPrefix:(NSString *)prefix;
++ (id)getDelegate;
++ (void)setDelegate:(id)delegate;
 
 @end

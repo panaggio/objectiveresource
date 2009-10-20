@@ -8,6 +8,8 @@
 
 #import "ObjectiveResourceConfig.h"
 
+static id objectiveResourceDelegate;
+
 @implementation ObjectiveResourceConfig
 
 + (NSString *)getSite {
@@ -52,5 +54,13 @@
 + (ORSResponseFormat)getResponseType {
 	return [self getRemoteResponseType];
 }
++ (id)getDelegate; {
+  return objectiveResourceDelegate;
+}
++ (void)setDelegate:(id)delegate; {
+  objectiveResourceDelegate = delegate;
+}
+
+
 
 @end
